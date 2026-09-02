@@ -46,11 +46,13 @@ Model fit remained stable, with only small movements in $R^2$ and $\alpha$ that 
 | Average R² | 0.912 | 0.898 |
 
 Though these numbers are consistent with ideas of factor decay in the decades following publication (McLean and Pontiff, 2016), this analysis does not provide any reliable evidence that the size and value premia have weakened.
+
 ## Limitations 
 - Instead of rebuilding factors from raw CRSP/Compustat data, portfolios are inherited from Ken French's library, and therefore inherit any conventions or revisions to the data
 - The post-2000 model fit comparison was not tested for statistical significance and is descriptive only. A formal test, such as a Chow test, would be needed to assess whether the regression relationship genuinely differs between periods.
 - Splitting the sample decreases available observations for each sub-period regression.
-- $$R^2$$ can shift between periods due to changes in overall market volatility (dot-com crash, 2008, COVID) rather than changes in the underlying factor relationship. Though not directly tested, small deviations in $R^2$ and $\alpha$ would appear consistent with volatility-driven impacts.
+- $R^2$ can shift between periods due to changes in overall market volatility (dot-com crash, 2008, COVID) rather than changes in the underlying factor relationship. Though not directly tested, small deviations in $R^2$ and $\alpha$ would appear consistent with volatility-driven impacts.
+  
 ## Usage
 - Install dependencies: `pip install -r requirements.txt`
 - Run the script: `python3 fama_french_replication.py`
