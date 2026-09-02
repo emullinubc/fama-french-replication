@@ -1,6 +1,6 @@
 import io
 import zipfile
-from datetime import datetime
+import os
 
 import numpy as np
 import pandas as pd
@@ -126,7 +126,6 @@ def factor_premium_decay_test(factors: pd.DataFrame, split_date: str):
         }
     return pd.DataFrame(out).T
 
-
 def model_fit_comparison(excess_panel: pd.DataFrame, factors: pd.DataFrame, split_date: str):
     pre_mask = excess_panel.index < split_date
     post_mask = excess_panel.index >= split_date
@@ -143,9 +142,6 @@ def model_fit_comparison(excess_panel: pd.DataFrame, factors: pd.DataFrame, spli
         "avg_r2_post": [post_results["r2"].mean()],
     })
     return summary, pre_results, post_results
-
-
-import os
 
 def main():
     os.makedirs("output", exist_ok=True)
